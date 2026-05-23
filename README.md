@@ -58,9 +58,6 @@ Metode MOORA digunakan untuk melakukan proses pengambilan keputusan multikriteri
 - REST API
 - MySQL
 
-### Networking
-- HTTP / Dio *(sesuaikan dengan project kamu)*
-
 ---
 
 ## 🏗️ Arsitektur Sistem
