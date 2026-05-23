@@ -39,11 +39,11 @@ Metode MOORA digunakan untuk melakukan proses pengambilan keputusan multikriteri
 
 | Kriteria | Tipe |
 |---|---|
-| Gaji/Uang Saku | Benefit |
-| Jarak | Cost |
-| Fasilitas | Benefit |
-| Relevansi Bidang | Benefit |
-| Fleksibilitas Jam Kerja | Benefit |
+| Uang Saku | Benefit |
+| Jam Kerja | Cost |
+| Jarak dari Kampus | Cost |
+| Risiko Bentrok dengan Jadwal Kuliah | Benefit |
+| Relevansi Techstack| Benefit |
 
 ---
 
@@ -57,9 +57,6 @@ Metode MOORA digunakan untuk melakukan proses pengambilan keputusan multikriteri
 - Laravel 12
 - REST API
 - MySQL
-
-### State Management
-- Provider / Riverpod / GetX *(sesuaikan dengan project kamu)*
 
 ### Networking
 - HTTP / Dio *(sesuaikan dengan project kamu)*
