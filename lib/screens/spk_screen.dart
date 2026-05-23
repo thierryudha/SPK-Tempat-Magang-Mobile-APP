@@ -265,7 +265,7 @@ class _SpkScreenState extends State<SpkScreen> {
                 child: _buildSectionHeader(
                   icon: Icons.tune_rounded,
                   title: 'Bobot Kriteria',
-                  subtitle: 'Bobot digunakan untuk menentukan kepentingan suatu kriteria', 
+                  subtitle: 'Tentukan bobot (0-1). Bobot digunakan untuk menentukan kepentingan anda terhadap suatu kriteria', 
                 ),
               ),
               SliverToBoxAdapter(
@@ -438,37 +438,53 @@ class _SpkScreenState extends State<SpkScreen> {
     return Padding(
       padding: const EdgeInsets.fromLTRB(24, 20, 24, 12),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: const EdgeInsets.all(8),
+            padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: AppTheme.primary.withOpacity(0.1),
-              borderRadius: BorderRadius.circular(10),
+              color: Colors.grey.shade200,
+              borderRadius: BorderRadius.circular(12),
             ),
-            child: Icon(icon, color: AppTheme.primary, size: 18),
+            child: Icon(
+              icon,
+              size: 20,
+              color: AppTheme.primary,
+            ),
           ),
+
           const SizedBox(width: 12),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w600,
-                  color: AppTheme.textPrimary,
-                  fontFamily: 'Poppins',
+
+          // INI YANG PENTING
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    fontFamily: 'Poppins',
+                  ),
                 ),
-              ),
-              Text(
-                subtitle,
-                style: const TextStyle(
-                  fontSize: 11,
-                  color: AppTheme.textSecondary,
-                  fontFamily: 'Poppins',
+
+                const SizedBox(height: 4),
+
+                Text(
+                  subtitle,
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.grey.shade600,
+                    fontFamily: 'Poppins',
+                  ),
+
+                  // penting untuk mencegah overflow
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),
