@@ -12,6 +12,7 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
+  final _namaController = TextEditingController();
   final _nimController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
@@ -23,6 +24,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   void dispose() {
     _emailController.dispose();
+    _namaController.dispose();
     _nimController.dispose();
     _passwordController.dispose();
     _confirmPasswordController.dispose();
@@ -112,6 +114,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       const SizedBox(height: 8),
+
+                      // --- Nama ---
+                      TextFormField(
+                          controller: _namaController,
+                          textCapitalization: TextCapitalization.words,
+                          decoration: const InputDecoration(
+                            labelText: 'Nama Lengkap',
+                            prefixIcon: Icon(Icons.person_outline_rounded,
+                                color: AppTheme.textSecondary, size: 20),
+                          ),
+                          validator: (value) {
+                            if (value == null || value.trim().isEmpty) {
+                              return 'Nama tidak boleh kosong';
+                            }
+                            return null;
+                          },
+                        ),
+                        const SizedBox(height: 16),
 
                       // --- Email ---
                       TextFormField(
