@@ -1,26 +1,78 @@
-Sistem Pendukung Keputusan (SPK) Pemilihan Tempat Magang Terbaik
-Flutter Mobile App & Laravel 12 REST API dengan Metode MOORA
-Aplikasi Sistem Pendukung Keputusan (SPK) berbasis mobile ini dirancang khusus untuk membantu mahasiswa Teknik Informatika dalam menentukan tempat magang terbaik. Sistem ini mengintegrasikan taksonomi kebutuhan industri IT dengan metode MOORA (Multi-Objective Optimization on the basis of Ratio Analysis) untuk menghasilkan rekomendasi yang objektif dan presisi.
+# SPK Pemilihan Tempat Magang Terbaik 📱
 
-🚀 Kilasan Arsitektur Sistem
-Aplikasi ini menggunakan arsitektur modern untuk memastikan pemisahan tanggung jawab (separation of concerns) dan kemudahan dalam pengembangan skala besar (scalability).
+Aplikasi mobile Android berbasis Flutter untuk membantu mahasiswa Teknik Informatika dalam menentukan tempat magang terbaik menggunakan metode MOORA (Multi-Objective Optimization on the Basis of Ratio Analysis).
 
-Frontend (Mobile): Flutter menggunakan pendekatan Clean Architecture atau BLoC/Provider State Management (sesuaikan dengan yang kamu pakai) untuk memastikan kode UI terpisah dari logika bisnis.
+Backend aplikasi dibangun menggunakan Laravel 12 dan komunikasi data menggunakan REST API.
 
-Backend (API): Laravel 12 yang dikonfigurasi sebagai REST API Stateless. Backend menangani manajemen data master (kriteria, bobot, alternatif perusahaan) dan mengeksekusi komputasi algoritma MOORA.
+---
 
-📊 Implementasi Metode MOORA
-Metode MOORA digunakan karena efisiensinya yang sangat tinggi dalam menangani kalkulasi multi-objektif dengan kriteria yang saling bertentangan (Benefit vs Cost).
+## 📌 Latar Belakang
 
-1. Kriteria & Pembobotan (Contoh Kasus IT)
-Sistem mengukur alternatif berdasarkan kriteria berikut:
+Mahasiswa sering mengalami kesulitan dalam memilih tempat magang karena banyaknya alternatif yang tersedia dan setiap tempat memiliki kelebihan serta kekurangan masing-masing.
 
-C1: Relevansi Teknis (Benefit) — Kesesuaian tech stack tempat magang dengan kurikulum TI.
+Aplikasi ini dikembangkan sebagai Sistem Pendukung Keputusan (SPK) untuk membantu proses pengambilan keputusan secara objektif berdasarkan beberapa kriteria yang telah ditentukan menggunakan metode MOORA.
 
-C2: Fasilitas & Uang Saku (Benefit) — Dukungan finansial atau perangkat kerja.
+---
 
-C3: Portofolio & Jaringan (Benefit) — Reputasi perusahaan dan peluang kerja pasca-magang.
+## 🎯 Tujuan Aplikasi
 
-C4: Jarak / Aksesibilitas (Cost) — Tingkat kesulitan mobilitas mahasiswa ke lokasi.
+- Membantu mahasiswa memilih tempat magang terbaik
+- Mengurangi subjektivitas dalam pengambilan keputusan
+- Mempermudah proses perankingan alternatif tempat magang
+- Mengimplementasikan metode MOORA pada platform mobile
 
-C5: Jam Kerja (Cost) — Fleksibilitas waktu agar tidak mengganggu bimbingan/perkuliahan.
+---
+
+## 🧠 Metode yang Digunakan
+
+### MOORA (Multi-Objective Optimization on the Basis of Ratio Analysis)
+
+Metode MOORA digunakan untuk melakukan proses pengambilan keputusan multikriteria dengan tahapan:
+
+1. Menentukan alternatif tempat magang
+2. Menentukan kriteria penilaian
+3. Normalisasi matriks keputusan
+4. Perhitungan nilai optimasi
+5. Perankingan alternatif
+
+### Contoh Kriteria
+
+| Kriteria | Tipe |
+|---|---|
+| Gaji/Uang Saku | Benefit |
+| Jarak | Cost |
+| Fasilitas | Benefit |
+| Relevansi Bidang | Benefit |
+| Fleksibilitas Jam Kerja | Benefit |
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend (Mobile)
+- Flutter
+- Dart
+
+### Backend
+- Laravel 12
+- REST API
+- MySQL
+
+### State Management
+- Provider / Riverpod / GetX *(sesuaikan dengan project kamu)*
+
+### Networking
+- HTTP / Dio *(sesuaikan dengan project kamu)*
+
+---
+
+## 🏗️ Arsitektur Sistem
+
+```text
+Flutter Mobile App
+        ↓
+    REST API
+        ↓
+Laravel 12 Backend
+        ↓
+     MySQL Database
