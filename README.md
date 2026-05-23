@@ -63,7 +63,7 @@ Metode MOORA digunakan untuk melakukan proses pengambilan keputusan multikriteri
 ## 🏗️ Arsitektur Sistem
 
 ```text
-Flutter Mobile App
+Flutter Mobile App / React Web App
         ↓
     REST API
         ↓
